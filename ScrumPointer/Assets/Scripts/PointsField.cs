@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PointsField : MonoBehaviour {
@@ -32,8 +30,13 @@ public class PointsField : MonoBehaviour {
 	void IncreaseValue(){
 		if(value == 0f)
 		{
-			value = 0.5f;
+			value = 0.25f;
 		}
+
+		else if (value == 0.25f)
+        {
+            value = 0.5f;
+        }
 
 		else if (value == 0.5f)
         {
@@ -80,9 +83,14 @@ public class PointsField : MonoBehaviour {
 			return;
         }
 
-        else if (value == 0.5f)
+        else if (value == 0.25f)
         {
             value = 0;
+        }
+
+		else if (value == 0.5f)
+        {
+            value = 0.25f;
         }
 
         else if (value == 1f)
