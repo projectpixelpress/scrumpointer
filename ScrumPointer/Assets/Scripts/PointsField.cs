@@ -10,7 +10,8 @@ public class PointsField : MonoBehaviour {
 
 	[HideInInspector]public float value;
     
-	void Start () {
+	private void Start () 
+    {
 		value = 0f;
 		UpdateText();
 	}
@@ -126,8 +127,15 @@ public class PointsField : MonoBehaviour {
         UpdateText();
     }
 
-	void UpdateText(){
+	void UpdateText()
+    {
 		_amount.text = value.ToString();
 		PointsManager.Instance.UpdateTotal();
 	}
+
+    public void Reset()
+    {
+        value = 0;
+        UpdateText();
+    }
 }
